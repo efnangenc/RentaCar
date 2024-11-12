@@ -8,11 +8,10 @@ public enum MotorTipi
     Engine1_4 = 14,
     Engine1_5 = 15,
     Engine1_6 = 16,
-    Engine1_8 = 17,
-    Engine1_9 = 18,
+    Engine1_8 = 18,
     Engine2_0 = 20,
     Engine3_0 = 30,
     Engine4_0 = 40,
     Engine5_0 = 50,
-    Engine6_0 = 60,
+    Engine6_0 = 60
 }
