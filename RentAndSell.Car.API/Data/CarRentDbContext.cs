@@ -8,5 +8,6 @@ namespace RentAndSell.Car.API.Data
         public CarRentDbContext(DbContextOptions options) : base(options) { }
 
         public DbSet<Araba> Arabalar { get; set; }
+        public DbSet<ArabaTarihce> ArabaTarihce { get; set; }
     }
 }

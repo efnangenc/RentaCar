@@ -10,6 +10,6 @@
         public DateTime? Update { get; set; }
         public DateTime? Delete { get; set; }
 
-        public bool IsDeleted { get; set; }
+        public bool? IsDeleted { get; set; }
     }
 }
