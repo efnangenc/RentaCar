@@ -1,4 +1,4 @@
-﻿namespace RentAndSell.Car.API;
+﻿namespace RentAndSell.Car.API.Commons.Enums;
 public enum MotorTipi
 {
     Engine1_0 = 10,

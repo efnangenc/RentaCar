@@ -1,4 +1,4 @@
-﻿namespace RentAndSell.Car.API;
+﻿namespace RentAndSell.Car.API.Commons.Enums;
 public enum YakitTuru
 {
     Benzin = 1,
