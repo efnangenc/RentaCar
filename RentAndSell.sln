@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentAndSell.Car.API", "RentAndSell.Car.API\RentAndSell.Car.API.csproj", "{925EAB4E-0C10-4BC8-9CA7-7254B9870BC1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentAndSell.Car.API", "RentAndSell.Car.API\RentAndSell.Car.API.csproj", "{925EAB4E-0C10-4BC8-9CA7-7254B9870BC1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarAndSell.Car.ConsoleApp", "CarAndSell.Car.ConsoleApp\CarAndSell.Car.ConsoleApp.csproj", "{2A54F7C9-0543-431B-A284-0D053A00AC22}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{925EAB4E-0C10-4BC8-9CA7-7254B9870BC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{925EAB4E-0C10-4BC8-9CA7-7254B9870BC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{925EAB4E-0C10-4BC8-9CA7-7254B9870BC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A54F7C9-0543-431B-A284-0D053A00AC22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A54F7C9-0543-431B-A284-0D053A00AC22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A54F7C9-0543-431B-A284-0D053A00AC22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A54F7C9-0543-431B-A284-0D053A00AC22}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

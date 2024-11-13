@@ -51,7 +51,7 @@ namespace RentAndSell.Car.API.Controllers
             _dbContext.Arabalar.Add(car);
             _dbContext.SaveChanges();
 
-            return Created();
+            return Ok($"Kayıt başarıyla yapıldı. Kayıt no: {car.Id}");
         }
 
         [HttpPut("{id}")]
