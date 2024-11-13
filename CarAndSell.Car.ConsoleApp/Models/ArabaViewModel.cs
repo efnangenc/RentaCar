@@ -1,4 +1,4 @@
-﻿using RentAndSell.Car.ConsoleApp.Commons.Enums;
+﻿using RentAndSell.Car.Commons.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;

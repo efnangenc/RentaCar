@@ -1,4 +1,4 @@
-﻿namespace RentAndSell.Car.Commons.Enums;
+﻿namespace RentAndSell.Car.Models.Commons.Enums;
 public enum SanzimanTipi
 {
     Manuel = 1,
