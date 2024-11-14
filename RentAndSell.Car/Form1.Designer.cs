@@ -34,6 +34,8 @@ namespace RentAndSell.Car
         {
             components = new System.ComponentModel.Container();
             groupBox1 = new GroupBox();
+            btnRead = new Button();
+            txtCarId = new TextBox();
             txtId = new TextBox();
             btnSil = new Button();
             btnGuncelle = new Button();
@@ -55,8 +57,6 @@ namespace RentAndSell.Car
             sanzimanTipiDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             yiliDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             arabaViewModelBindingSource = new BindingSource(components);
-            txtCarId = new TextBox();
-            btnRead = new Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nbrUpDownYil).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvArabaList).BeginInit();
@@ -83,6 +83,24 @@ namespace RentAndSell.Car
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "YENİ KAYIT";
+            // 
+            // btnRead
+            // 
+            btnRead.Location = new Point(136, 279);
+            btnRead.Name = "btnRead";
+            btnRead.Size = new Size(75, 23);
+            btnRead.TabIndex = 13;
+            btnRead.Text = "Oku";
+            btnRead.UseVisualStyleBackColor = true;
+            btnRead.Click += btnRead_Click;
+            // 
+            // txtCarId
+            // 
+            txtCarId.Location = new Point(20, 279);
+            txtCarId.Name = "txtCarId";
+            txtCarId.PlaceholderText = "Car ID";
+            txtCarId.Size = new Size(100, 23);
+            txtCarId.TabIndex = 12;
             // 
             // txtId
             // 
@@ -258,24 +276,6 @@ namespace RentAndSell.Car
             // 
             arabaViewModelBindingSource.DataSource = typeof(Models.ArabaViewModel);
             // 
-            // txtCarId
-            // 
-            txtCarId.Location = new Point(20, 279);
-            txtCarId.Name = "txtCarId";
-            txtCarId.PlaceholderText = "Car ID";
-            txtCarId.Size = new Size(100, 23);
-            txtCarId.TabIndex = 12;
-            // 
-            // btnRead
-            // 
-            btnRead.Location = new Point(136, 279);
-            btnRead.Name = "btnRead";
-            btnRead.Size = new Size(75, 23);
-            btnRead.TabIndex = 13;
-            btnRead.Text = "Oku";
-            btnRead.UseVisualStyleBackColor = true;
-            btnRead.Click += btnRead_Click;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -286,6 +286,7 @@ namespace RentAndSell.Car
             Controls.Add(groupBox1);
             Controls.Add(txtYili);
             Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             Load += Form1_Load;
             groupBox1.ResumeLayout(false);

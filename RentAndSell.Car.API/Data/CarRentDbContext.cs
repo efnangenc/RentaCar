@@ -1,9 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using RentAndSell.Car.API.Data.Entities.Concrete;
 
 namespace RentAndSell.Car.API.Data
 {
-    public class CarRentDbContext : DbContext
+    public class CarRentDbContext : IdentityDbContext
     {
         public CarRentDbContext(DbContextOptions options) : base(options) { }
 

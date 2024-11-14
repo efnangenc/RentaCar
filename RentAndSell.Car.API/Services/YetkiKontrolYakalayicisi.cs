@@ -38,7 +38,7 @@ namespace RentAndSell.Car.API.Services
 
 
 
-                    ClaimsIdentity identity = new ClaimsIdentity(claims, Scheme.Name);  //bana ışardan verilen sheme adını kullan yetkikontrol
+                    ClaimsIdentity identity = new ClaimsIdentity(claims, Scheme.Name);  //bana dışardan verilen sheme adını kullan yetkikontrol
                     ClaimsPrincipal claimsPrincipal = new ClaimsPrincipal(identity);  //bana ışardan verilen sheme adını kullan yetkikontrol
 
                     AuthenticationTicket gecisBileti = new AuthenticationTicket(claimsPrincipal, Scheme.Name);
