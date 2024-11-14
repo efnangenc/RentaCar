@@ -51,8 +51,8 @@ namespace RentAndSell.Car.API.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "93f5718f-0049-4780-8c02-70b6b495bd55",
-                            ConcurrencyStamp = "fd2d77ee-879c-4324-a808-bdc9361e3729",
+                            Id = "f1eed64f-9898-4a4c-874e-f489b8dcc4b3",
+                            ConcurrencyStamp = "b10a6798-697f-4e24-b6cc-a41ec51c5816",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
@@ -147,8 +147,8 @@ namespace RentAndSell.Car.API.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "6feb259d-80aa-4efe-a830-32217e2d99b2",
-                            RoleId = "93f5718f-0049-4780-8c02-70b6b495bd55"
+                            UserId = "b6e2b8f0-5afc-4b45-9c3d-6d9d6cc2c881",
+                            RoleId = "f1eed64f-9898-4a4c-874e-f489b8dcc4b3"
                         });
                 });
 
@@ -360,9 +360,9 @@ namespace RentAndSell.Car.API.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "6feb259d-80aa-4efe-a830-32217e2d99b2",
+                            Id = "b6e2b8f0-5afc-4b45-9c3d-6d9d6cc2c881",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "3072dff9-b91f-402c-8537-f05fe371fd7f",
+                            ConcurrencyStamp = "e7f39af9-26f6-445d-8072-77509e5315e0",
                             Email = "admin@mail.com",
                             EmailConfirmed = true,
                             FirstName = "Admin",
@@ -370,9 +370,9 @@ namespace RentAndSell.Car.API.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@MAIL.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEGcZycw4DVFN5bbMyn7c86/Vs31TfmGBxB8UhZOr5usDHbU36nGLJWcCHlz5fQckLA==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEKicOQcE484SgJ9TN0Yhcz058MVIgoFLwvuttPVyA9VEMHh1+dJRFDThA8Qe6Iv/ng==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "9e783479-3356-4ca9-b53b-7db910868966",
+                            SecurityStamp = "a65ebe46-f585-485c-a7ef-59ebe14bc335",
                             TwoFactorEnabled = false,
                             UserName = "admin"
                         });

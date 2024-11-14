@@ -1,0 +1,54 @@
+﻿@model List<ArabaViewModel>
+@{
+}
+<p>Index sayfası</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Marka</th>
+            <th>Model</th>
+            <th>Yılı</th>
+            <th>Motor Tipi</th>
+            <th>Şanzıman Tipi</th>
+            <th>Yakıt Türü</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Any())
+        {
+            foreach (ArabaViewModel araba in Model)
+            {
+                <tr>
+                    <td> @araba.Id</td>
+                    <td> @araba.Marka</td>
+                    <td> @araba.Model</td>
+                    <td> @araba.Yili</td>
+                    <td> @araba.MotorTipi</td>
+                    <td> @araba.SanzimanTipi</td>
+                    <td> @araba.YakitTuru</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr class="text-center text-muted">
+                <td colspan="7">
+                    <p>Kayıt yok</p>
+                </td>
+            </tr>
+        }
+    </tbody>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Marka</th>
+            <th>Model</th>
+            <th>Yılı</th>
+            <th>Motor Tipi</th>
+            <th>Şanzıman Tipi</th>
+            <th>Yakıt Türü</th>
+        </tr>
+    </thead>
+</table>

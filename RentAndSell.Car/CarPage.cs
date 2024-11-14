@@ -6,15 +6,16 @@ using System.Reflection;
 
 namespace RentAndSell.Car
 {
-    public partial class Form1 : Form
+    public partial class CarPage : Form
     {
         private HttpClient _httpClient;
         private const string _endpoint = "Cars";
-        public Form1()
+        public CarPage()
         {
             InitializeComponent();
             _httpClient = new HttpClient();
             _httpClient.BaseAddress = new Uri("https://localhost:7027/api/");
+            _httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Authorization", Program.BasicAuth);
 
         }
 

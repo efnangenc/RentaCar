@@ -13,42 +13,35 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 
-builder.Services.AddAuthentication("YetkiKontrol").AddScheme<AuthenticationSchemeOptions, YetkiKontrolYakalayicisi>("YetkiKontrol", null);   //yetki conotorl benim cookie adýým aslýnda
-
 builder.Services.AddDbContext<CarRentDbContext>(opt =>
 {
     opt.UseSqlServer(builder.Configuration.GetConnectionString("CarRentDbCon"));
 });
 
 builder.Services.AddIdentity<Kullanici, IdentityRole>()
-                .AddEntityFrameworkStores<CarRentDbContext>();
+                .AddEntityFrameworkStores<CarRentDbContext>()
+                .AddDefaultTokenProviders();
+
+#region Basic Authentication Kodlarý
+//builder.Services.AddAuthentication("BasicAuthentication")
+//                .AddScheme<AuthenticationSchemeOptions, YetkiKontrolYakalayicisi>("BasicAuthentication", null)
+//                .AddCookie(opt =>
+//                {
+//                    opt.Events.OnRedirectToLogin = (context) =>
+//                    {
+//                        context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+//                        return Task.CompletedTask;
+//                    };
+
+//                    opt.Events.OnRedirectToAccessDenied = (context) =>
+//                    {
+//                        context.Response.StatusCode = StatusCodes.Status403Forbidden;
+//                        return Task.CompletedTask;
+//                    };
+//                }); 
+#endregion
 
 builder.Services.AddControllers();
-
-builder.Services.ConfigureApplicationCookie(opt =>
-{
-    //opt.Cookie = new CookieBuilder()
-    //{
-    //    Name = "CookieControl"
-    //    //HttpOnly = false,
-    //    //SameSite = SameSiteMode.Lax,
-    //    //SecurePolicy = CookieSecurePolicy.Always
-    //};
-
-
-    opt.Events.OnRedirectToLogin = (context) =>
-    {
-        context.Response.StatusCode = StatusCodes.Status401Unauthorized;
-        return Task.CompletedTask;
-    };
-
-    opt.Events.OnRedirectToAccessDenied = (context) =>
-    {
-        context.Response.StatusCode = StatusCodes.Status403Forbidden;
-        return Task.CompletedTask;
-    };
-
-});
 
 
 var app = builder.Build();
@@ -56,6 +49,9 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapControllers();
 

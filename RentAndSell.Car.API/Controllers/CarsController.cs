@@ -7,7 +7,8 @@ using RentAndSell.Car.API.Data.Entities.Concrete;
 
 namespace RentAndSell.Car.API.Controllers
 {
-    [Authorize(AuthenticationSchemes = "YetkiKontrol")]
+    //[Authorize(AuthenticationSchemes = "BasicAuthentication")]
+
     [Route("api/[controller]")]
     [ApiController]
     public class CarsController : ControllerBase

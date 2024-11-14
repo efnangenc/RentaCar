@@ -4,7 +4,7 @@ using System.Xml.Linq;
 
 namespace RentAndSell.Car
 {
-    partial class Form1
+    partial class CarPage
     {
             /// <summary>
             ///  Required designer variable.
