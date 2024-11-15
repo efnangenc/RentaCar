@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RentAndSell.Car.WebApp.Models;
+using System.Net.Http.Headers;
 
 namespace RentAndSell.Car.WebApp.Controllers
 {
@@ -9,18 +10,29 @@ namespace RentAndSell.Car.WebApp.Controllers
     public class ArabaController : Controller
     {
         private readonly HttpClient _httpClient;
+        private readonly IHttpContextAccessor _httpcontextAccessor;
         private const string _endPoint = "Cars";
-        public ArabaController(HttpClient httpClient)
+        private readonly string _token;
+        public ArabaController(HttpClient httpClient, IHttpContextAccessor contextAccessor)
         {
             _httpClient = httpClient;
             _httpClient.BaseAddress = new Uri("https://localhost:7027/api/");
+            _httpcontextAccessor = contextAccessor;
+
+            string token = _httpcontextAccessor.HttpContext.Session.GetString("Token");
+
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _token);
+
+            
+
         }
+
 
         // GET: ArabaController
         public ActionResult Index()
         {
-          
             List<ArabaViewModel> model = _httpClient.GetFromJsonAsync<List<ArabaViewModel>>(_endPoint).Result;
+
             return View(model);
         }
 
@@ -33,6 +45,8 @@ namespace RentAndSell.Car.WebApp.Controllers
         // GET: ArabaController/Create
         public ActionResult Create()
         {
+            ArabaViewModel model = new ArabaViewModel();
+            ViewBag.Token = _token;
             return View();
         }
 

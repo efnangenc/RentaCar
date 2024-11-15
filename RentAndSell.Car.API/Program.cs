@@ -47,7 +47,13 @@ builder.Services.AddIdentity<Kullanici, IdentityRole>()
 
 #region JWT Authentication Kodlarý
 
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+builder.Services.AddAuthentication(opt =>
+
+                {
+                    opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                    opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                
+                })
                 .AddJwtBearer(opt =>
                 {
                     opt.TokenValidationParameters = new TokenValidationParameters
@@ -62,22 +68,29 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                     };
                 });
 
-builder.Services.ConfigureApplicationCookie(opt =>
+//builder.Services.ConfigureApplicationCookie(opt =>
+//{
+//    opt.Events.OnRedirectToLogin = (context) =>
+//    {
+//        context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+//        return Task.CompletedTask;
+//    };
+
+//    opt.Events.OnRedirectToAccessDenied = (context) =>
+//    {
+//        context.Response.StatusCode = StatusCodes.Status403Forbidden;
+//        return Task.CompletedTask;
+//    };
+//});
+
+builder.Services.AddCors(opt =>
 {
-    opt.Events.OnRedirectToLogin = (context) =>
+    opt.AddDefaultPolicy(p=>
     {
-        context.Response.StatusCode = StatusCodes.Status401Unauthorized;
-        return Task.CompletedTask;
-    };
-
-    opt.Events.OnRedirectToAccessDenied = (context) =>
-    {
-        context.Response.StatusCode = StatusCodes.Status403Forbidden;
-        return Task.CompletedTask;
-    };
+        p.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
+    });
 });
-
-
+    
 #endregion
 
 builder.Services.AddControllers();
@@ -125,6 +138,8 @@ app.UseSwaggerUI(s =>
 {
     s.SwaggerEndpoint("/swagger/v1/swagger.json", "Swagger");
 });
+
+app.UseCors();
 
 app.MapControllers();
 

@@ -35,7 +35,7 @@ namespace RentAndSell.Car.API.Controllers
         }
 
         [HttpPost]
-        public ActionResult Post(Araba car)
+        public ActionResult Post([FromBody]Araba car)
         {
             //ArabaTarihce arabaTarihce = new ArabaTarihce();
             //arabaTarihce.Marka = car.Marka;
